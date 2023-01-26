@@ -1,0 +1,19 @@
+:root {
+    --space-xxs: 3px;
+    --space-xs: 6px;
+    --space-s: 12px;
+    --space-m: 18px;
+    --space-l: 24px;
+    --space-xl: 30px;
+    --space-xxl: 36px;
+    --space-xxxl: 42px;
+
+
+    --color-border: #c2c2c2
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+}
