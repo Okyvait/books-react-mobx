@@ -1,9 +1,13 @@
+import { useContext } from 'react';
 import { BookListItem } from './book-list-item';
+import { observer } from 'mobx-react-lite';
+import { BooksStoreContext } from '../../store/books-store';
 import * as styles from './book-list.module.css';
 
-export function BookList() {
-    const books = [1, 2, 3];
+export const BookList = observer(() => {
+    const booksStore = useContext(BooksStoreContext);
+
     return <div className={styles.list}>
-        {books.map(b => <BookListItem key={b} book={b}></BookListItem>)}
-    </div>
-}
+        {booksStore.books.map((book, i) => <BookListItem index={i + 1} key={book.id} book={book}></BookListItem>)}
+    </div>;
+});
