@@ -1,12 +1,12 @@
 import * as classes from './book-list.module.css';
-import { IBook } from '../../models/book-model';
+import { Book } from '../../models/book-model';
 
-interface IBookListItemProps {
-    book: IBook;
+interface BookListItemProps {
+    book: Book;
     index: number;
 }
 
-export function BookListItem({ book, index }: IBookListItemProps) {
+export function BookListItem({ book, index }: BookListItemProps) {
     const { rating, title, genres } = book;
     return <div className={classes.item}>
         <div className={classes.bookWrap}>#{index}</div>

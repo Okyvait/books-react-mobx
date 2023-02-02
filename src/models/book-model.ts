@@ -1,17 +1,17 @@
-export interface IBook {
+export interface Book {
     id: string;
     rating: number;
     title: string;
     genres: string[];
 }
 
-export class BookModel implements IBook {
+export class BookModel implements Book {
     id: string;
     rating: number;
     title: string;
     genres: string[];
 
-    constructor(params: IBook) {
+    constructor(params: Book) {
         Object.assign(this, params);
     }
 }

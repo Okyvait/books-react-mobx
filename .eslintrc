@@ -21,5 +21,6 @@
   },
   "env": {
     "browser": true
-  }
+  },
+  "ignorePatterns": ["server.js", "mocks.js"]
 }
