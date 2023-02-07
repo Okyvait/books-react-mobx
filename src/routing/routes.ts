@@ -1,4 +1,9 @@
-export const AppRoutes = {
+interface Route {
+    path: string;
+    getUrl: (id?: string) => string;
+}
+
+export const AppRoutes: Record<string, Route> = {
     main: {
         path: '/',
         getUrl: () => '/'

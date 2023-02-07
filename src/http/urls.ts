@@ -1,5 +1,7 @@
 export enum UrlsEnum {
-    books = '/books'
+    books = '/books',
+    book = '/books/',
+    additionalInfo = '/books/additionalInfo/'
 }
 
 class Urls {
@@ -10,8 +12,8 @@ class Urls {
         this.baseUrl = config?.baseUrl || 'http://localhost:3000/api';
     }
 
-    get(url: UrlsEnum) {
-        return this.baseUrl + url;
+    get(url: UrlsEnum, params = '') {
+        return `${this.baseUrl}${url}${params}`;
     }
 
 }

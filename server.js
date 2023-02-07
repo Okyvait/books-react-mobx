@@ -14,6 +14,10 @@ app.get('/api/books/:bookId', (req, res) => {
     res.send(mocks().getBook(req.params.bookId));
 });
 
+app.get('/api/books/additionalInfo/:bookId', (req, res) => {
+    res.send(mocks().getAdditionalInfo(req.params.bookId));
+});
+
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });

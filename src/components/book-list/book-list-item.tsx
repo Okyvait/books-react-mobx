@@ -11,7 +11,9 @@ interface BookListItemProps {
 export function BookListItem({ book, index }: BookListItemProps) {
     const { rating, title, genres, id } = book;
 
-    const goToDetails = () => Router.navigate(AppRoutes.book.getUrl(id));
+    const goToDetails = () => {
+        Router.navigate(AppRoutes.book.getUrl(id));
+    };
 
     return <div className={classes.item} onClick={goToDetails}>
         <div className={classes.bookWrap}>#{index}</div>

@@ -10,6 +10,9 @@ export const BookList = observer(() => {
     useEffect(() => booksStore.loadBooks(), []);
 
     return <div className={styles.list}>
-        {booksStore.books.map((book, i) => <BookListItem index={i + 1} key={book.id} book={book}></BookListItem>)}
+        {
+            booksStore.books.entities.map((id, i) =>
+            <BookListItem index={i + 1} key={id} book={booksStore.books.data[id]} />)
+        }
     </div>;
 });

@@ -6,6 +6,7 @@
 
 .item {
     display: grid;
+    cursor: pointer;
     grid-template-columns: 100px 100px 2fr 3fr;
 }
 
