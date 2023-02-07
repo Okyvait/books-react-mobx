@@ -7,8 +7,11 @@ const port = 3000;
 app.use(cors());
 
 app.get('/api/books', (req, res) => {
-    res.type('application/json');
     res.send({ books: mocks().books });
+});
+
+app.get('/api/books/:bookId', (req, res) => {
+    res.send(mocks().getBook(req.params.bookId));
 });
 
 app.listen(port, () => {

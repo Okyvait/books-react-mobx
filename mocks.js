@@ -5,7 +5,15 @@ module.exports = function () {
         { id: '313', rating: 3.7, title: 'Title 3', genres: ['romance', 'mystery'] },
     ];
 
+    const getBook = (id) => {
+        const book = books.find(b => b.id === id);
+        if (book) {
+            return { ...book, description: 'This is an awesome book-page!' };
+        }
+    }
+
     return {
-        books
+        books,
+        getBook
     };
 };

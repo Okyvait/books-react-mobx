@@ -1,13 +1,11 @@
-import { BookList } from './components/book-list/book-list';
+import { RouterProvider } from 'react-router-dom';
 import { TopBar } from './components/topbar/topbar';
-import * as styles from './app.module.css';
 import './global-styles.module.css';
+import { Router } from './routing/router';
 
 export function App() {
     return <div>
         <TopBar/>
-        {/*filters*/}
-        <div className={styles.booksContainer}><BookList /></div>
-        {/*router*/}
+        <RouterProvider router={Router} />
     </div>;
 }
