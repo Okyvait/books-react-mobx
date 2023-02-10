@@ -1,6 +1,6 @@
 import { Client } from './http-service';
 
-export class FetchClient implements Client{
+export class FetchClient {
     get(link, options?) {
         return fetch(link, options).then(this.toJson);
     }

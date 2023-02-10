@@ -14,7 +14,7 @@ export const BookPage = observer(() => {
 
     if (booksStore.loading) return <div>...loading</div>;
 
-    const book = booksStore.books.data[bookId];
+    const book = booksStore.books[bookId];
     return <div>
         <div>
             <div>
@@ -28,7 +28,7 @@ export const BookPage = observer(() => {
             </div>
         </div>
         <div>
-            description: {book.description}
+            description: {booksStore.books[bookId].description}
         </div>
     </div>;
 });

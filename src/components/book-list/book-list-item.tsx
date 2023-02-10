@@ -8,7 +8,7 @@ interface BookListItemProps {
     index: number;
 }
 
-export function BookListItem({ book, index }: BookListItemProps) {
+export const BookListItem = ({ book, index }: BookListItemProps) => {
     const { rating, title, genres, id } = book;
 
     const goToDetails = () => {
@@ -21,4 +21,4 @@ export function BookListItem({ book, index }: BookListItemProps) {
         <div className={classes.bookWrap}>{title}</div>
         <div className={classes.bookWrap}>{genres?.map((g, i) => <span key={g}>{g}{i === genres.length - 1 ? '' : ','} </span>)}</div>
     </div>;
-}
+};

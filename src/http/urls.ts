@@ -1,7 +1,6 @@
 export enum UrlsEnum {
     books = '/books',
     book = '/books/',
-    additionalInfo = '/books/additionalInfo/'
 }
 
 class Urls {

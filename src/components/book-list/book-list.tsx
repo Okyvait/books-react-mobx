@@ -11,8 +11,8 @@ export const BookList = observer(() => {
 
     return <div className={styles.list}>
         {
-            booksStore.books.entities.map((id, i) =>
-            <BookListItem index={i + 1} key={id} book={booksStore.books.data[id]} />)
+           booksStore.booksList
+               .map((key, i) => <BookListItem index={i + 1} key={key} book={booksStore.books[key]} />)
         }
     </div>;
 });

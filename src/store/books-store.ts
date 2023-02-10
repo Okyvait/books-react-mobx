@@ -1,15 +1,23 @@
-import { makeAutoObservable } from 'mobx';
+import { computed, makeAutoObservable } from 'mobx';
 import { createContext } from 'react';
 import httpService from '../http/http-service';
 import { urls, UrlsEnum } from '../http/urls';
-import { bookMapper, BooksEntities } from '../mappers/book-mapper';
+import { bookMapper } from '../mappers/book-mapper';
+import { Book } from '../models/book-model';
 
 class BooksStore {
-    books: BooksEntities = { entities: [], data: {} };
+    books : {[id: string]: Book} = { };
     loading = true;
 
     constructor() {
-        makeAutoObservable(this);
+        makeAutoObservable(this, {
+            booksList: computed
+        });
+    }
+
+    get booksList(): string[] {
+        console.log('computing..');
+        return Object.keys(this.books) || [];
     }
 
     loadBooks() {
@@ -18,17 +26,12 @@ class BooksStore {
     }
 
     loadBook(id) {
-        if (this.books.data[id]) {
-            this.books.data[id].loadAdditionalInfo();
-            return;
-        }
         this.loading = true;
         return httpService.get(urls.get(UrlsEnum.book, id)).then(this.addBook);
     }
 
     private addBook = (info) => {
-        this.books.entities.push(info.id);
-        this.books.data[info.id] = info;
+        this.books[info.id] = info;
         this.loading = false;
     };
 
