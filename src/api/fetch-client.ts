@@ -1,5 +1,3 @@
-import { Client } from './http-service';
-
 export class FetchClient {
     get(link, options?) {
         return fetch(link, options).then(this.toJson);
@@ -15,3 +13,5 @@ export class FetchClient {
 
     private toJson = response => response.json();
 }
+
+export const fetchClient = new FetchClient();

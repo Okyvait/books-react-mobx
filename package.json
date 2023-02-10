@@ -2,7 +2,7 @@
   "name": "books-react-mobx",
   "version": "0.0.1",
   "scripts": {
-    "start": "parcel",
+    "start": "tsc --noEmit && parcel",
     "build": "parcel build",
     "server": "node server.js",
     "lint": "eslint . --ext .ts,.tsx --fix"

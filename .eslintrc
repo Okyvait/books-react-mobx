@@ -10,7 +10,8 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "react/react-in-jsx-scope": "off",
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
+    "no-console": "warn"
   },
   "parserOptions": {
     "sourceType": "module",

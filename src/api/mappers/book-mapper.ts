@@ -1,9 +1,4 @@
-import { Book, BookModel } from '../models/book-model';
-
-export interface BooksEntities {
-    entities: string[];
-    data: Record<string, BookModel>;
-}
+import { Book, BookModel } from '../../models/book-model';
 
 export function bookMapper(books): {[id: string]: Book} {
     return books.reduce((obj, item) => ({

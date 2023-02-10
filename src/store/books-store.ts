@@ -1,12 +1,14 @@
 import { computed, makeAutoObservable } from 'mobx';
 import { createContext } from 'react';
-import httpService from '../http/http-service';
-import { urls, UrlsEnum } from '../http/urls';
-import { bookMapper } from '../mappers/book-mapper';
 import { Book } from '../models/book-model';
+import { booksApiClient } from '../api/books-api-client';
+
+export interface Books {
+    [id: string]: Book;
+}
 
 class BooksStore {
-    books : {[id: string]: Book} = { };
+    books: Books = {};
     loading = true;
 
     constructor() {
@@ -16,27 +18,26 @@ class BooksStore {
     }
 
     get booksList(): string[] {
-        console.log('computing..');
         return Object.keys(this.books) || [];
     }
 
     loadBooks() {
         this.loading = true;
-        httpService.get(urls.get(UrlsEnum.books)).then(this.setBooks);
+        booksApiClient.loadBooks().then(this.setBooks);
     }
 
     loadBook(id) {
         this.loading = true;
-        return httpService.get(urls.get(UrlsEnum.book, id)).then(this.addBook);
+        return booksApiClient.loadBook(id).then(this.addBook);
     }
 
-    private addBook = (info) => {
+    private addBook = (info: Book) => {
         this.books[info.id] = info;
         this.loading = false;
     };
 
-    private setBooks = ({ books }) => {
-        this.books = bookMapper(books);
+    private setBooks = (books: Books) => {
+        this.books = books;
         this.loading = false;
     };
 }
