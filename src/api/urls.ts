@@ -3,18 +3,14 @@ export enum UrlsEnum {
     book = '/books/',
 }
 
-class Urls {
+export class Urls {
     baseUrl: string;
 
-    // todo: config
-    constructor(config?) {
-        this.baseUrl = config?.baseUrl || 'http://localhost:3000/api';
+    constructor(config: { baseUrl: string }) {
+        this.baseUrl = config.baseUrl;
     }
 
     get(url: UrlsEnum, params = '') {
         return `${this.baseUrl}${url}${params}`;
     }
-
 }
-
-export const urls = new Urls();

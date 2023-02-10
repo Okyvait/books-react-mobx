@@ -1,13 +1,12 @@
 import { computed, makeAutoObservable } from 'mobx';
-import { createContext } from 'react';
 import { Book } from '../models/book-model';
-import { booksApiClient } from '../api/books-api-client';
+import { booksApiClient } from '../init';
 
 export interface Books {
     [id: string]: Book;
 }
 
-class BooksStore {
+export class BooksStore {
     books: Books = {};
     loading = true;
 
@@ -41,5 +40,3 @@ class BooksStore {
         this.loading = false;
     };
 }
-
-export const BooksStoreContext = createContext(new BooksStore());

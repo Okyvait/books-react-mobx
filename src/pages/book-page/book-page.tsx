@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import { BooksStoreContext } from '../../store/books-store';
+import { BooksStoreContext } from '../../init';
 
 export const BookPage = observer(() => {
     const booksStore = useContext(BooksStoreContext);

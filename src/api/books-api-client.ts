@@ -1,19 +1,16 @@
-import { fetchClient } from './fetch-client';
-import { urls, UrlsEnum } from './urls';
+import { UrlsEnum } from './urls';
 import { bookMapper } from './mappers/book-mapper';
 import { Books } from '../store/books-store';
 import { Book } from '../models/book-model';
+import { fetchClient, booksUrls } from '../init';
 
 export class BooksApiClient {
     async loadBooks(): Promise<Books> {
-        const response = await fetchClient.get(urls.get(UrlsEnum.books));
-        const mapped = bookMapper(response?.books);
-        return mapped || {};
+        const response = await fetchClient.get(booksUrls.get(UrlsEnum.books));
+        return bookMapper(response?.books || {});
     }
 
     loadBook(id: string): Promise<Book> {
-        return fetchClient.get(urls.get(UrlsEnum.book, id));
+        return fetchClient.get(booksUrls.get(UrlsEnum.book, id));
     }
 }
-
-export const booksApiClient = new BooksApiClient();

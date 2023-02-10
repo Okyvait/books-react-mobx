@@ -13,5 +13,3 @@ export class FetchClient {
 
     private toJson = response => response.json();
 }
-
-export const fetchClient = new FetchClient();

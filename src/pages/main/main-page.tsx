@@ -1,5 +1,5 @@
-import * as styles from '../../app.module.css';
 import { BookList } from '../../components/book-list/book-list';
+import * as styles from './main.module.css';
 
 export function MainPage() {
     {/*filters*/}

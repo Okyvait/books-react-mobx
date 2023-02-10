@@ -1,8 +1,8 @@
 import { useContext, useEffect } from 'react';
 import { BookListItem } from './book-list-item';
 import { observer } from 'mobx-react-lite';
-import { BooksStoreContext } from '../../store/books-store';
 import * as styles from './book-list.module.css';
+import { BooksStoreContext } from '../../init';
 
 export const BookList = observer(() => {
     const booksStore = useContext(BooksStoreContext);
