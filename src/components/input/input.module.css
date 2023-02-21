@@ -1,0 +1,4 @@
+.primary {
+    height: var(--input-height);
+    font-family: var(--font-family-emodji);
+}

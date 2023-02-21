@@ -1,7 +1,8 @@
 .header {
+    position: relative;
     padding: var(--space-m) var(--space-l);
-    font-family: var(--font-1);
     text-align: center;
+    background: var(--background-dotes-1);
 }
 
 .nav {
