@@ -1,5 +1,5 @@
 .list {
-    --list-border: 1px solid var(--color-border);
+    --list-border: 1px solid var(--color-border-light);
     border-bottom: var(--list-border);
     border-right: var(--list-border);
 }

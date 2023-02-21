@@ -1,3 +1,27 @@
 .header {
     padding: var(--space-m) var(--space-l);
+    font-family: var(--font-1);
+    text-align: center;
+}
+
+.nav {
+    gap: var(--space-m);
+    justify-content: center;
+    display: inline-flex;
+    border-bottom: 2px solid var(--color-border-dark);
+    padding-bottom: var(--space-l);
+}
+
+.nav a {
+    cursor: pointer;
+    font-size: var(--font-size-headers);
+}
+
+.nav a:visited {
+    color: unset;
+    text-decoration: none;
+}
+
+.nav a.active {
+    color: unset;
 }

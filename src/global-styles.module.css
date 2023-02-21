@@ -1,4 +1,6 @@
 :root {
+
+    /*spaces*/
     --space-xxs: 3px;
     --space-xs: 6px;
     --space-s: 12px;
@@ -8,13 +10,27 @@
     --space-xxl: 36px;
     --space-xxxl: 42px;
 
+    /*colors*/
+    --color-border-light: #c2c2c2;
+    --color-border-dark: #000;
+    --color-background-light: #fff;
+    --color-background-dark: #06173b;
+    --color-background-neutral: #7a7a7a;
 
-    --color-border: #c2c2c2
+    /*fonts*/
+    --font-1: 'Oswald', sans-serif;
+    --font-size-headers: 1.75em;
+    --font-size-headers-2: 2em;
 }
 
 * { box-sizing: border-box; }
 
 body {
     margin: 0;
-    font-family: MS Sans Serif, Geneva, sans-serif;
+    /*font-family: MS Sans Serif, Geneva, sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    min-width: 500px;
 }
