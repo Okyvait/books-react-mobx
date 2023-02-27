@@ -1,11 +1,11 @@
 {
-    "compilerOptions": {
-        "experimentalDecorators": true,
-        "moduleResolution":"node",
-        "jsx": "react-jsx",
-        "target": "es2017",
-        "module": "ES6",
-        "skipLibCheck": true
-    },
-    "exclude": ["server.js", "mocks.js"]
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "target": "es2017",
+    "module": "ES6",
+    "skipLibCheck": true
+  },
+  "exclude": ["server.js", "mocks.js"]
 }

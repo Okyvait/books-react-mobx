@@ -19,5 +19,8 @@
 .footerContent {
     padding-top: var(--space-l);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
 }

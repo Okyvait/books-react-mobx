@@ -9,10 +9,7 @@ export const BookList = observer(() => {
 
     useEffect(() => booksStore.loadBooks(), []);
 
-    return <div className={styles.list}>
-        {
-           booksStore.booksList
-               .map((key) => <BookListItem key={key} book={booksStore.books[key]} />)
-        }
-    </div>;
+    if (booksStore.loading) return <div>...loading</div>;
+
+    return <div className={styles.list}>{booksStore.booksList.length ? booksStore.booksList.map((key) => <BookListItem key={key} book={booksStore.books[key]} />) : 'Nothing was found :( '}</div>;
 });

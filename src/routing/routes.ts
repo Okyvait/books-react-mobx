@@ -6,10 +6,10 @@ interface Route {
 export const AppRoutes: Record<string, Route> = {
     main: {
         path: '/',
-        getUrl: () => '/'
+        getUrl: () => '/',
     },
     book: {
         path: '/book/:bookId',
-        getUrl: (id) => `/book/${id}`
-    }
+        getUrl: (id) => `/book/${id}`,
+    },
 };

@@ -16,14 +16,16 @@ export const BookListItem = ({ book }: BookListItemProps) => {
         Router.navigate(AppRoutes.book.getUrl(id));
     };
 
-    return <div className={styles.item} onClick={goToDetails}>
-        <div className={styles.wrap}>
-            <Img />
-            <div>
-                <h4 className={styles.title}>{title}</h4>
-                <h6>Rating: {rating}</h6>
-                <Genres genres={genres} />
+    return (
+        <div className={styles.item} onClick={goToDetails}>
+            <div className={styles.wrap}>
+                <Img />
+                <div>
+                    <h3 className={styles.title}>{title}</h3>
+                    <h6>Rating: {rating}</h6>
+                    <Genres genres={genres} />
+                </div>
             </div>
         </div>
-    </div>;
+    );
 };

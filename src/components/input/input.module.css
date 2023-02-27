@@ -4,8 +4,7 @@
 }
 
 .input:not(:placeholder-shown) {
-
- }
+}
 
 .input:placeholder-shown {
     font-family: var(--font-family-emodji);

@@ -1,6 +1,9 @@
 .header {
     position: relative;
-    padding: var(--space-m) var(--space-l);
+    top: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-m) var(--space-7xl);
     text-align: center;
     background: var(--background-dotes-1);
 }
@@ -15,6 +18,7 @@
 
 .nav a {
     cursor: pointer;
+    text-decoration: none;
     font-size: var(--font-size-headers);
 }
 
@@ -23,6 +27,6 @@
     text-decoration: none;
 }
 
-.nav a.active {
-    color: unset;
+.user {
+    font-size: var(--font-size-headers-3);
 }

@@ -5,7 +5,8 @@
     "start": "tsc --noEmit && parcel",
     "build": "parcel build",
     "server": "node server.js",
-    "lint": "eslint . --ext .ts,.tsx --fix"
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "prettier": "npx prettier --write ./src"
   },
   "repository": {
     "type": "git",
@@ -29,8 +30,10 @@
     "@typescript-eslint/parser": "^5.49.0",
     "cors": "^2.8.5",
     "eslint": "8.22.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-react": "^7.32.1",
     "express": "^4.18.2",
+    "prettier": "2.8.4",
     "process": "^0.11.10",
     "typescript-eslint": "^0.0.1-alpha.0"
   },

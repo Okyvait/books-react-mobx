@@ -10,7 +10,7 @@
     transition: 300ms;
 }
 
-.btn:hover{
+.btn:hover {
     transition: background-color 300ms;
     background-color: var(--color-background-grey);
 }

@@ -12,7 +12,7 @@ export class BooksStore {
 
     constructor() {
         makeAutoObservable(this, {
-            booksList: computed
+            booksList: computed,
         });
     }
 

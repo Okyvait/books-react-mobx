@@ -6,10 +6,10 @@ export class FetchClient {
     post(link, params?, options?) {
         return fetch(link, {
             method: 'POST',
-            ...params && { data: JSON.stringify(params) },
-            ...options && options
+            ...(params && { data: JSON.stringify(params) }),
+            ...(options && options),
         }).then(this.toJson);
     }
 
-    private toJson = response => response.json();
+    private toJson = (response) => response.json();
 }

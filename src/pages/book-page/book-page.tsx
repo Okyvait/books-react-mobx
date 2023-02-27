@@ -20,16 +20,18 @@ export const BookPage = observer(() => {
     if (booksStore.loading) return <div>...loading</div>;
 
     const book = booksStore.books[bookId];
-    return <div>
-       <div className={styles.cardContainer}>
-           <div className={styles.backBtnContainer}>
-               <Button onClick={goBack}>
-                   <span className={styles.backTxt}>
-                       <span className={styles.backArrow}>⬅</span> <span>Back</span>
-                   </span>
-               </Button>
-           </div>
-           <Card book={book} />
-       </div>
-    </div>;
+    return (
+        <div>
+            <div className={styles.cardContainer}>
+                <div className={styles.backBtnContainer}>
+                    <Button onClick={goBack}>
+                        <span className={styles.backTxt}>
+                            <span className={styles.backArrow}>⬅</span> <span>Back</span>
+                        </span>
+                    </Button>
+                </div>
+                <Card book={book} />
+            </div>
+        </div>
+    );
 });

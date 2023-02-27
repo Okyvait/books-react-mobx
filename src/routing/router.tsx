@@ -16,8 +16,8 @@ export const Router = createBrowserRouter([
             },
             {
                 path: AppRoutes.book.path,
-                element: <BookPage />
+                element: <BookPage />,
             },
-        ]
+        ],
     },
 ]);
