@@ -11,7 +11,9 @@
     "semi": ["error", "always"],
     "react/react-in-jsx-scope": "off",
     "object-curly-spacing": ["error", "always"],
-    "no-console": "warn"
+    "no-console": "warn",
+    "no-empty-function": "warn",
+    "@typescript-eslint/no-empty-function": "off"
   },
   "parserOptions": {
     "sourceType": "module",

@@ -1,0 +1,16 @@
+.btn {
+    font-family: var(--font-family-main);
+    color: var(--color-dark);
+    background-color: var(--color-background-light);
+    padding: var(--space-xs) var(--space-xl);
+    border: solid var(--color-border-light) 2px;
+    border-radius: 4px;
+    align-items: center;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.btn:hover{
+    transition: background-color 300ms;
+    background-color: var(--color-background-grey);
+}

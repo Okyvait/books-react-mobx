@@ -16,10 +16,13 @@
     --space-8xl: 72px;
 
     /*colors*/
+    --color-light: #fff;
+    --color-dark: #000;
     --color-border-light: #c2c2c2;
     --color-border-dark: #000;
     --color-background-light: #fff;
-    --color-background-dark: #848484;
+    --color-background-dark: #000;
+    --color-background-grey: #efefef;
     --color-background-neutral: #ededed;
 
     /*background*/

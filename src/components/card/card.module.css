@@ -1,0 +1,30 @@
+.card {
+    padding: var(--space-m) var(--space-xl);
+}
+
+.img {
+    width: 250px;
+    height: 250px;
+}
+
+.btn {
+    display: block;
+    margin-top: var(--space-s);
+}
+
+.titleBlock {
+    display: flex;
+    column-gap: var(--space-xxxxl);
+}
+
+.title {
+    margin-top: 0;
+}
+
+.descriptionBlock {
+    margin-top: var(--space-xl);
+}
+
+.descriptionText {
+    white-space: pre-wrap;
+}
