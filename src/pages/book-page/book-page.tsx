@@ -8,30 +8,30 @@ import { Button } from '../../components/button/button';
 import { Router } from '../../routing/router';
 
 export const BookPage = observer(() => {
-    const booksStore = useContext(BooksStoreContext);
-    const { bookId } = useParams();
+  const booksStore = useContext(BooksStoreContext);
+  const { bookId } = useParams();
 
-    useEffect(() => {
-        booksStore.loadBook(bookId);
-    }, [bookId]);
+  useEffect(() => {
+    booksStore.loadBook(bookId);
+  }, [bookId]);
 
-    const goBack = () => Router.navigate(-1);
+  const goBack = () => Router.navigate(-1);
 
-    if (booksStore.loading) return <div>...loading</div>;
+  if (booksStore.loading) return <div>...loading</div>;
 
-    const book = booksStore.books[bookId];
-    return (
-        <div>
-            <div className={styles.cardContainer}>
-                <div className={styles.backBtnContainer}>
-                    <Button onClick={goBack}>
-                        <span className={styles.backTxt}>
-                            <span className={styles.backArrow}>⬅</span> <span>Back</span>
-                        </span>
-                    </Button>
-                </div>
-                <Card book={book} />
-            </div>
+  const book = booksStore.books[bookId];
+  return (
+    <div>
+      <div className={styles.cardContainer}>
+        <div className={styles.backBtnContainer}>
+          <Button onClick={goBack}>
+            <span className={styles.backTxt}>
+              <span className={styles.backArrow}>←</span> <span>Back</span>
+            </span>
+          </Button>
         </div>
-    );
+        <Card book={book} />
+      </div>
+    </div>
+  );
 });

@@ -1,32 +1,32 @@
 .header {
-    position: relative;
-    top: 15px;
-    display: flex;
-    justify-content: space-between;
-    padding: var(--space-m) var(--space-7xl);
-    text-align: center;
-    background: var(--background-dotes-1);
+  position: relative;
+  top: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-m) var(--space-7xl);
+  text-align: center;
+  background: var(--background-dotes-1);
 }
 
 .nav {
-    gap: var(--space-m);
-    justify-content: center;
-    display: inline-flex;
-    border-bottom: 2px solid var(--color-border-dark);
-    padding-bottom: var(--space-l);
+  gap: var(--space-m);
+  justify-content: center;
+  display: inline-flex;
+  border-bottom: 2px solid var(--color-border-dark);
+  padding-bottom: var(--space-l);
 }
 
 .nav a {
-    cursor: pointer;
-    text-decoration: none;
-    font-size: var(--font-size-headers);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: var(--font-size-headers);
 }
 
 .nav a:visited {
-    color: unset;
-    text-decoration: none;
+  color: unset;
+  text-decoration: none;
 }
 
 .user {
-    font-size: var(--font-size-headers-3);
+  font-size: var(--font-size-headers-3);
 }

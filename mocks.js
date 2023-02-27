@@ -34,6 +34,12 @@ module.exports = function () {
       title: "Title 10",
       genres: ["detective", "horror", "action"],
     },
+    {
+      id: "323",
+      rating: 3.3,
+      title: "Title 11",
+      genres: ["detective", "action"],
+    },
   ];
 
   const description = `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras elementum. Vivamus porttitor turpis ac leo. Aenean placerat. Praesent dapibus. Vestibulum fermentum tortor id mi. Maecenas fermentum, sem in pharetra pellentesque, velit turpis volutpat ante, in pharetra metus odio a lectus. Praesent dapibus. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Sed convallis magna eu sem. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Cras elementum. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.

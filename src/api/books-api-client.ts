@@ -5,12 +5,12 @@ import { Book } from '../models/book-model';
 import { fetchClient, booksUrls } from '../init';
 
 export class BooksApiClient {
-    async loadBooks(): Promise<Books> {
-        const response = await fetchClient.get(booksUrls.get(UrlsEnum.books));
-        return bookMapper(response?.books || {});
-    }
+  async loadBooks(): Promise<Books> {
+    const response = await fetchClient.get(booksUrls.get(UrlsEnum.books));
+    return bookMapper(response?.books || {});
+  }
 
-    loadBook(id: string): Promise<Book> {
-        return fetchClient.get(booksUrls.get(UrlsEnum.book, id));
-    }
+  loadBook(id: string): Promise<Book> {
+    return fetchClient.get(booksUrls.get(UrlsEnum.book, id));
+  }
 }

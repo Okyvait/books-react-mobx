@@ -1,11 +1,38 @@
 .booksContainer {
-    margin: var(--space-xl) var(--space-l);
-    max-width: 1300px;
-    margin-left: auto;
-    margin-right: auto;
+  margin: var(--space-xl) var(--space-l);
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.content {
-    background-color: var(--color-background-neutral);
-    padding: var(--space-m);
+.mainContent {
+  background-color: var(--color-background-neutral);
+  padding-top: var(--space-l);
+  padding-bottom: var(--space-xl);
+}
+
+.bannerContainer {
+  margin-bottom: var(--space-xxxxl);
+  position: relative;
+}
+
+.banner {
+  height: 400px;
+  width: 100%;
+  opacity: 0.2;
+}
+
+.bannerText {
+  z-index: 2;
+  font-size: 3.2rem;
+  position: absolute;
+  top: 32%;
+  left: 39%;
+  color: var(--font-color-grey);
+}
+
+.filters {
+  margin-bottom: var(--space-5xl);
+  display: flex;
+  column-gap: var(--space-l);
 }

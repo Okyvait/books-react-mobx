@@ -6,26 +6,26 @@ import { Img } from '../img/img';
 import { Genres } from '../genres/genres';
 
 interface BookListItemProps {
-    book: Book;
+  book: Book;
 }
 
 export const BookListItem = ({ book }: BookListItemProps) => {
-    const { rating, title, genres, id } = book;
+  const { rating, title, genres, id } = book;
 
-    const goToDetails = () => {
-        Router.navigate(AppRoutes.book.getUrl(id));
-    };
+  const goToDetails = () => {
+    Router.navigate(AppRoutes.book.getUrl(id));
+  };
 
-    return (
-        <div className={styles.item} onClick={goToDetails}>
-            <div className={styles.wrap}>
-                <Img />
-                <div>
-                    <h3 className={styles.title}>{title}</h3>
-                    <h6>Rating: {rating}</h6>
-                    <Genres genres={genres} />
-                </div>
-            </div>
+  return (
+    <div className={styles.item} onClick={goToDetails}>
+      <div className={styles.wrap}>
+        <Img />
+        <div>
+          <h3 className={styles.title}>{title}</h3>
+          <h6>Rating: {rating}</h6>
+          <Genres genres={genres} />
         </div>
-    );
+      </div>
+    </div>
+  );
 };
