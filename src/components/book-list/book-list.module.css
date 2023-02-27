@@ -1,19 +1,24 @@
 .list {
     --list-border: 1px solid var(--color-border-light);
-    border-bottom: var(--list-border);
-    border-right: var(--list-border);
-}
-
-.item {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-m);
+    row-gap: var(--space-l);
+}
+
+.wrap {
+    display: flex;
     cursor: pointer;
-    grid-template-columns: 100px 100px 2fr 3fr;
-}
-
-.bookWrap {
+    gap: var(--space-m);
     border: var(--list-border);
-    border-bottom: none;
-    border-right: none;
-    padding: var(--space-s);
+    padding: var(--space-m);
+    background-color: var(--color-background-light);
 }
 
+.img {
+    float: left;
+}
+
+.title {
+    margin-top: 0;
+}

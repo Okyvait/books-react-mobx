@@ -1,4 +1,12 @@
-.primary {
+.input {
     height: var(--input-height);
+    font-family: var(--font-family-main);
+}
+
+.input:not(:placeholder-shown) {
+
+ }
+
+.input:placeholder-shown {
     font-family: var(--font-family-emodji);
 }

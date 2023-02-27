@@ -9,7 +9,6 @@ export function TopBar() {
         <nav className={styles.nav}>
             <NavLink className={({ isActive }) => isActive ? styles.active : undefined}
                 to={AppRoutes.main.path}>Home</NavLink>
-            <a>Popular</a>
             <a>Random</a>
             <a>Collections</a>
         </nav>

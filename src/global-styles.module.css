@@ -10,13 +10,17 @@
     --space-xxl: 36px;
     --space-xxxl: 42px;
     --space-xxxxl: 48px;
+    --space-5xl: 54px;
+    --space-6xl: 60px;
+    --space-7xl: 66px;
+    --space-8xl: 72px;
 
     /*colors*/
     --color-border-light: #c2c2c2;
     --color-border-dark: #000;
     --color-background-light: #fff;
     --color-background-dark: #848484;
-    --color-background-neutral: #d7d7d7;
+    --color-background-neutral: #ededed;
 
     /*background*/
     --background-lines-1: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1JyBoZWlnaHQ9JzUnPgogIDxyZWN0IHdpZHRoPSc1JyBoZWlnaHQ9JzUnIGZpbGw9J3doaXRlJy8+CiAgPHBhdGggZD0nTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVonIHN0cm9rZT0nIzg4OCcgc3Ryb2tlLXdpZHRoPScxJy8+Cjwvc3ZnPg==") repeat;

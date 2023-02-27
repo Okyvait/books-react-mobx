@@ -12,7 +12,7 @@ export const BookList = observer(() => {
     return <div className={styles.list}>
         {
            booksStore.booksList
-               .map((key, i) => <BookListItem index={i + 1} key={key} book={booksStore.books[key]} />)
+               .map((key) => <BookListItem key={key} book={booksStore.books[key]} />)
         }
     </div>;
 });
