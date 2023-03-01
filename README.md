@@ -1,16 +1,18 @@
-React + MobX
-This is a typical react app.
+# React + Typescript + MobX
+
+This is a typical React app.
+
 Build with: 
   - React
   - Typescript
   - MobX
   - Jest
-  - Parcel
+  - Parcel...
 
 ## Start app locally
 `npm start` 
 `npm run server`
 
-# some screens
+## Screens
 ![img.png](img.png)
 ![img_1.png](img_1.png)
