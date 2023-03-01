@@ -3,22 +3,27 @@ import { Img } from '../img/img';
 import { Genres } from '../genres/genres';
 import { Button } from '../button/button';
 import * as styles from './card.module.css';
+import { readingListsContext } from '../../init';
+import { observer } from 'mobx-react-lite';
+import { useContext } from 'react';
 
 interface CardProps {
   book: Book;
 }
 
-export const Card = ({ book }: CardProps) => {
-  // todo:
-  const addToList = () => {};
+export const Card = observer(({ book }: CardProps) => {
+  const readingListsStore = useContext(readingListsContext);
+  const addOrRemove = () => {
+    readingListsStore.has(book.id) ? readingListsStore.remove(book.id) : readingListsStore.add(book.id);
+  };
 
   return (
     <div className={styles.card}>
       <div className={styles.titleBlock}>
         <div>
           <Img classNames={styles.img} />
-          <Button onClick={addToList} classNames={styles.btn}>
-            Add to the list
+          <Button onClick={addOrRemove} classNames={styles.btn}>
+            {readingListsStore.has(book.id) ? 'Remove from the list' : 'Add to the list'}
           </Button>
         </div>
         <div>
@@ -35,4 +40,4 @@ export const Card = ({ book }: CardProps) => {
       </div>
     </div>
   );
-};
+});

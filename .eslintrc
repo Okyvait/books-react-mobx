@@ -8,7 +8,7 @@
     "prettier"
   ],
   "rules": {
-    "quotes": ["error", "single"],
+    "quotes": ["error", "single", {"avoidEscape" : true}],
     "semi": ["error", "always"],
     "react/react-in-jsx-scope": "off",
     "object-curly-spacing": ["error", "always"],
@@ -31,5 +31,5 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": ["server.js", "mocks.js"]
+  "ignorePatterns": ["mock-server.js", "mocks.js"]
 }

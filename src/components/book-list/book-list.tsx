@@ -2,11 +2,11 @@ import { useContext, useEffect } from 'react';
 import { BookListItem } from './book-list-item';
 import { observer } from 'mobx-react-lite';
 import * as styles from './book-list.module.css';
-import { BooksStoreContext } from '../../init';
+import { booksStoreContext } from '../../init';
 import { Button } from '../button/button';
 
 export const BookList = observer(() => {
-  const booksStore = useContext(BooksStoreContext);
+  const booksStore = useContext(booksStoreContext);
 
   useEffect(() => booksStore.loadBooks(), []);
 

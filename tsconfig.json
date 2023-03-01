@@ -5,7 +5,8 @@
     "jsx": "react-jsx",
     "target": "es2017",
     "module": "ES6",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "mock-server.js", "mocks.js"]

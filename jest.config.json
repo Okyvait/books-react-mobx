@@ -1,0 +1,7 @@
+{
+  "preset": "ts-jest",
+  "setupFiles": [
+    "./src/__jest__/local-storage-mock.ts"
+  ],
+  "collectCoverage": true
+}

@@ -1,14 +1,14 @@
 import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import { BooksStoreContext } from '../../init';
+import { booksStoreContext } from '../../init';
 import { Card } from '../../components/card/card';
 import * as styles from './book-page.module.css';
 import { Button } from '../../components/button/button';
 import { Router } from '../../routing/router';
 
 export const BookPage = observer(() => {
-  const booksStore = useContext(BooksStoreContext);
+  const booksStore = useContext(booksStoreContext);
   const { bookId } = useParams();
 
   useEffect(() => {
