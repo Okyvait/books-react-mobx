@@ -1,7 +1,7 @@
 import { ReadingListsStore } from '../reading-lists-store';
 import clearAllMocks = jest.clearAllMocks;
 
-describe('reading list store tests', () => {
+describe('reading list store', () => {
   const store = new ReadingListsStore();
   const setItemSpy = jest.spyOn(localStorage, 'setItem');
   const getItemSpy = jest.spyOn(localStorage, 'getItem');

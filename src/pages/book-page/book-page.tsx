@@ -1,11 +1,12 @@
 import { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import { booksStoreContext } from '../../init';
 import { Card } from '../../components/card/card';
 import * as styles from './book-page.module.css';
 import { Button } from '../../components/button/button';
 import { Router } from '../../routing/router';
+import { AppRoutes } from '../../routing/routes';
 
 export const BookPage = observer(() => {
   const booksStore = useContext(booksStoreContext);
@@ -21,17 +22,19 @@ export const BookPage = observer(() => {
 
   const book = booksStore.books[bookId];
   return (
-    <div>
-      <div className={styles.cardContainer}>
-        <div className={styles.backBtnContainer}>
-          <Button onClick={goBack}>
-            <span className={styles.backTxt}>
-              <span className={styles.backArrow}>←</span> <span>Back</span>
-            </span>
-          </Button>
-        </div>
-        <Card book={book} />
+    <div className={styles.cardContainer}>
+      <div className={styles.backBtnContainer}>
+        <Button onClick={goBack}>
+          <span className={styles.backTxt}>← Back</span>
+        </Button>
       </div>
+      {book ? (
+        <Card book={book} />
+      ) : (
+        <div className={styles.noResults}>
+          Nothing was found, please try search or return to <Link to={AppRoutes.main.path}>the home page</Link>
+        </div>
+      )}
     </div>
   );
 });

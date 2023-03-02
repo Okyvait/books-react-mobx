@@ -22,7 +22,7 @@ export class BooksStore {
 
   loadBooks() {
     this.loading = true;
-    booksApiClient.loadBooks().then(this.setBooks);
+    return booksApiClient.loadBooks().then(this.setBooks);
   }
 
   loadBook(id) {
@@ -31,8 +31,9 @@ export class BooksStore {
   }
 
   private addBook = (info: Book) => {
-    this.books[info.id] = info;
     this.loading = false;
+    if (!info?.id) return;
+    this.books[info.id] = info;
   };
 
   private setBooks = (books: Books) => {

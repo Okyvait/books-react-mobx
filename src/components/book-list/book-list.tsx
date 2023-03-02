@@ -8,7 +8,10 @@ import { Button } from '../button/button';
 export const BookList = observer(() => {
   const booksStore = useContext(booksStoreContext);
 
-  useEffect(() => booksStore.loadBooks(), []);
+  useEffect(() => {
+    const fetchBooks = () => booksStore.loadBooks();
+    fetchBooks();
+  }, []);
 
   if (booksStore.loading) return <div>...loading</div>;
 
@@ -17,7 +20,7 @@ export const BookList = observer(() => {
       <div className={styles.list}>
         {booksStore.booksList.length
           ? booksStore.booksList.map((key) => <BookListItem key={key} book={booksStore.books[key]} />)
-          : 'Nothing was found :( '}
+          : 'Nothing was found... :( '}
       </div>
 
       {/*todo: implement*/}
