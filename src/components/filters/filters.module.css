@@ -1,0 +1,6 @@
+.filtersContainer {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: var(--space-5xl);
+  column-gap: var(--space-l);
+}

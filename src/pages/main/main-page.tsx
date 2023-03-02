@@ -1,7 +1,7 @@
 import { BookList } from '../../components/book-list/book-list';
 import * as styles from './main.module.css';
 import { Img } from '../../components/img/img';
-import { Input } from '../../components/input/input';
+import { Filters } from '../../components/filters/filters';
 
 export function MainPage() {
   return (
@@ -12,10 +12,7 @@ export function MainPage() {
       </div>
       <div className={styles.mainContent}>
         <div className={styles.booksContainer}>
-          {/*todo: add filters, move them to a new component*/}
-          <div className={styles.filters}>
-            <b>Some filters:</b> <Input /> <Input /> <Input /> <Input />
-          </div>
+          <Filters />
           <BookList />
         </div>
       </div>

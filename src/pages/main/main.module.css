@@ -30,9 +30,3 @@
   left: 39%;
   color: var(--font-color-grey);
 }
-
-.filters {
-  margin-bottom: var(--space-5xl);
-  display: flex;
-  column-gap: var(--space-l);
-}

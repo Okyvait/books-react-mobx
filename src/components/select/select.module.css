@@ -1,0 +1,5 @@
+.select {
+  font-family: var(--font-family-main);
+  height: var(--input-height);
+  padding: var(--space-xs) var(--space-m) var(--space-xxs) var(--space-xs);
+}
