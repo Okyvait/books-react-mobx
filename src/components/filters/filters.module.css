@@ -1,6 +1,26 @@
-.filtersContainer {
+.filterRow {
   display: flex;
   align-items: flex-end;
-  margin-bottom: var(--space-5xl);
   column-gap: var(--space-l);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5xl);
+  column-gap: var(--space-5xl);
+}
+
+.deleteText {
+  margin-left: var(--space-s);
+}
+
+.applied {
+  gap: var(--space-s);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.appliedWrap {
+  margin-top: var(--space-l);
 }

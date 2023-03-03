@@ -1,6 +1,8 @@
 import { computed, makeAutoObservable } from 'mobx';
 import { Book } from '../models/book-model';
 import { booksApiClient } from '../init';
+import { FiltersModel } from '../models/filters/filters-model';
+import { Filter } from '../models/filters/shared';
 
 export interface Books {
   [id: string]: Book;
@@ -9,8 +11,10 @@ export interface Books {
 export class BooksStore {
   books: Books = {};
   loading = true;
+  filterModel: FiltersModel;
 
   constructor() {
+    this.filterModel = new FiltersModel();
     makeAutoObservable(this, {
       booksList: computed,
     });
@@ -28,6 +32,14 @@ export class BooksStore {
   loadBook(id) {
     this.loading = true;
     return booksApiClient.loadBook(id).then(this.addBook);
+  }
+
+  applyFilter(filter: Filter) {
+    this.filterModel.apply(filter);
+  }
+
+  removeFilter(filter: Filter) {
+    this.filterModel.remove(filter);
   }
 
   private addBook = (info: Book) => {

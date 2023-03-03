@@ -1,7 +1,7 @@
 import { BookList } from '../../components/book-list/book-list';
 import * as styles from './main.module.css';
 import { Img } from '../../components/img/img';
-import { Filters } from '../../components/filters/filters';
+import { FiltersContainer } from '../../components/filters/filters-container';
 
 export function MainPage() {
   return (
@@ -12,7 +12,7 @@ export function MainPage() {
       </div>
       <div className={styles.mainContent}>
         <div className={styles.booksContainer}>
-          <Filters />
+          <FiltersContainer />
           <BookList />
         </div>
       </div>

@@ -1,4 +1,5 @@
 .input {
   height: var(--input-height);
   font-family: var(--font-family-main);
+  min-width: var(--input-min-width);
 }

@@ -1,6 +1,12 @@
-import { Books } from '../../store/books-store';
-
 export interface Filter {
-  key: string;
-  apply(books: Books): Books;
+  key: FilterKey;
+  value: string;
 }
+
+export interface Sorting {
+  key: SortingKey;
+  value: string;
+}
+
+export type FilterKey = 'genre';
+export type SortingKey = 'rating';
