@@ -1,9 +1,9 @@
-import { Filter, FilterKey } from './shared';
+import { Filter, FilterKey, SortingKey } from './shared';
 import { computed, makeAutoObservable } from 'mobx';
 
 export class FiltersModel {
   filters: Partial<Record<FilterKey, Set<string>>> = {};
-  sorting = {};
+  sorting: Partial<Record<SortingKey, Set<string>>> = {};
 
   constructor() {
     makeAutoObservable(this, {

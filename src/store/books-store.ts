@@ -26,7 +26,8 @@ export class BooksStore {
 
   loadBooks() {
     this.loading = true;
-    return booksApiClient.loadBooks().then(this.setBooks);
+    const filters = { filters: this.filterModel.appliedFilters };
+    return booksApiClient.loadBooks(filters).then(this.setBooks);
   }
 
   loadBook(id) {
@@ -36,10 +37,12 @@ export class BooksStore {
 
   applyFilter(filter: Filter) {
     this.filterModel.apply(filter);
+    this.loadBooks();
   }
 
   removeFilter(filter: Filter) {
     this.filterModel.remove(filter);
+    this.loadBooks();
   }
 
   private addBook = (info: Book) => {

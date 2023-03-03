@@ -1,44 +1,44 @@
 module.exports = function () {
   const books = [
     {
-      id: "311",
+      id: '311',
       rating: 4.5,
-      title: "Title 1",
-      genres: ["detective", "mystery", "action"],
+      title: 'Title 1',
+      genres: ['detective', 'mystery', 'action'],
     },
     {
-      id: "312",
+      id: '312',
       rating: 4.1,
-      title: "Title 2",
-      genres: ["detective", "action"],
+      title: 'Title 2',
+      genres: ['detective', 'action'],
     },
     {
-      id: "313",
+      id: '313',
       rating: 3.7,
-      title: "Title 3",
-      genres: ["romance", "mystery"],
+      title: 'Title 3',
+      genres: ['romance', 'mystery'],
     },
-    { id: "314", rating: 5.0, title: "Title 4", genres: ["action", "mystery"] },
-    { id: "315", rating: 3.5, title: "Title 5", genres: ["romance", "horror"] },
-    { id: "317", rating: 3.7, title: "Title 7", genres: ["action", "mystery"] },
+    { id: '314', rating: 5.0, title: 'Title 4', genres: ['action', 'mystery'] },
+    { id: '315', rating: 3.5, title: 'Title 5', genres: ['romance', 'horror'] },
+    { id: '317', rating: 3.7, title: 'Title 7', genres: ['action', 'mystery'] },
     {
-      id: "318",
+      id: '318',
       rating: 2.3,
-      title: "Title 8",
-      genres: ["detective", "mystery"],
+      title: 'Title 8',
+      genres: ['detective', 'mystery'],
     },
-    { id: "319", rating: 3.7, title: "Title 9", genres: ["romance", "horror"] },
+    { id: '319', rating: 3.7, title: 'Title 9', genres: ['romance', 'horror'] },
     {
-      id: "322",
+      id: '322',
       rating: 3.3,
-      title: "Title 10",
-      genres: ["detective", "horror", "action"],
+      title: 'Title 10',
+      genres: ['detective', 'horror', 'action'],
     },
     {
-      id: "323",
+      id: '323',
       rating: 3.3,
-      title: "Title 11",
-      genres: ["detective", "action"],
+      title: 'Title 11',
+      genres: ['detective', 'action'],
     },
   ];
 
@@ -52,8 +52,20 @@ module.exports = function () {
     }
   };
 
+  const getBooks = (filters) => {
+    if (!Object.keys(filters)?.length) {
+      return books;
+    }
+
+    return books.filter((book) => {
+      if (typeof filters.genre === 'string') return book.genres.includes(filters.genre);
+      return filters.genre?.every((f) => book.genres.includes(f));
+    });
+  };
+
   return {
     books,
     getBook,
+    getBooks,
   };
 };
