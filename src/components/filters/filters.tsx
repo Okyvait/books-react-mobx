@@ -1,6 +1,7 @@
 import { Option, Select } from '../select/select';
 import { Label } from '../label/label';
 import { FilterKey } from '../../models/filters/shared';
+import { GenresEnum } from './filters-enum';
 
 interface FilterItem {
   key: FilterKey;
@@ -15,23 +16,23 @@ export const filters: FilterItem[] = [
     label: 'Genre',
     options: [
       {
-        value: 'action',
+        value: GenresEnum.action,
         name: 'action',
       },
       {
-        value: 'detective',
+        value: GenresEnum.detective,
         name: 'detective',
       },
       {
-        value: 'horror',
+        value: GenresEnum.horror,
         name: 'horror',
       },
       {
-        value: 'mystery',
+        value: GenresEnum.mystery,
         name: 'mystery',
       },
       {
-        value: 'romance',
+        value: GenresEnum.romance,
         name: 'romance',
       },
     ],

@@ -27,3 +27,11 @@
   margin-top: var(--space-5xl);
   text-align: center;
 }
+
+.item {
+  text-decoration: none;
+}
+
+.item:visited, .tem:active {
+  color: initial;
+}

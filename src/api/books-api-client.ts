@@ -1,5 +1,5 @@
 import { UrlsEnum } from './urls';
-import { bookMapper, getFilters } from './mappers/book-mapper';
+import { bookMapper } from './mappers/book-mapper';
 import { Books } from '../store/books-store';
 import { Book, BookModel } from '../models/book-model';
 import { fetchClient, booksUrls } from '../init';
@@ -11,8 +11,8 @@ export interface BooksFilters {
 
 export class BooksApiClient {
   async loadBooks(filters?: BooksFilters): Promise<Books> {
-    const filterQuery = getFilters(filters);
-    const url = `${booksUrls.get(UrlsEnum.books)}?${filterQuery}`;
+    const filterQuery = this.getFilters(filters);
+    const url = `${booksUrls.get(UrlsEnum.books)}${filterQuery ? '?' + filterQuery : ''}`;
     const response = await fetchClient.get(url);
     return bookMapper(response?.books);
   }
@@ -22,5 +22,13 @@ export class BooksApiClient {
     if (book) {
       return new BookModel(book);
     }
+  }
+
+  private getFilters(filtersObj?: BooksFilters): string {
+    const params = new URLSearchParams();
+    filtersObj?.filters.forEach(({ key, value }) => {
+      params.append(key, value);
+    });
+    return params.toString();
   }
 }

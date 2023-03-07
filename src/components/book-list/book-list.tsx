@@ -13,8 +13,6 @@ export const BookList = observer(() => {
     fetchBooks();
   }, []);
 
-  if (booksStore.loading) return <div>...loading</div>;
-
   return (
     <div>
       <div className={styles.list}>

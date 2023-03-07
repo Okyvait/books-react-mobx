@@ -7,7 +7,7 @@ export class Urls {
   baseUrl: string;
 
   constructor(config: { baseUrl: string }) {
-    this.baseUrl = config.baseUrl;
+    this.baseUrl = config.baseUrl || '';
   }
 
   get(url: UrlsEnum, params = '') {

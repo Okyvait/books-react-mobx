@@ -1,9 +1,9 @@
 import * as styles from './book-list.module.css';
 import { Book } from '../../models/book-model';
 import { AppRoutes } from '../../routing/routes';
-import { Router } from '../../routing/router';
 import { Img } from '../img/img';
 import { Genres } from '../genres/genres';
+import { Link } from 'react-router-dom';
 
 interface BookListItemProps {
   book: Book;
@@ -12,12 +12,8 @@ interface BookListItemProps {
 export const BookListItem = ({ book }: BookListItemProps) => {
   const { rating, title, genres, id } = book;
 
-  const goToDetails = () => {
-    Router.navigate(AppRoutes.book.getUrl(id));
-  };
-
   return (
-    <div className={styles.item} onClick={goToDetails}>
+    <Link className={styles.item} to={AppRoutes.book.getUrl(id)}>
       <div className={styles.wrap}>
         <Img />
         <div>
@@ -26,6 +22,6 @@ export const BookListItem = ({ book }: BookListItemProps) => {
           <Genres genres={genres} />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

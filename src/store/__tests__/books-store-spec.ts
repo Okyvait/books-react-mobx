@@ -1,6 +1,7 @@
 import clearAllMocks = jest.clearAllMocks;
 import { fetchClient } from '../../init';
 import { BooksStore } from '../books-store';
+import { GenresEnum } from '../../components/filters/filters-enum';
 
 describe('books store', () => {
   const fetchGetSpy = jest.spyOn(fetchClient, 'get');
@@ -59,5 +60,29 @@ describe('books store', () => {
     expect(fetchGetSpy).toBeCalledTimes(1);
     expect(fetchGetSpy).toBeCalledWith(expect.stringContaining(id));
     expect(store.books[id]).toBeUndefined();
+  });
+
+  it('should apply and remove filters', async () => {
+    await store.applyFilter({ key: 'genre', value: GenresEnum.detective });
+    await store.applyFilter({ key: 'genre', value: GenresEnum.action });
+    await store.applyFilter({ key: 'genre', value: GenresEnum.detective });
+    await store.applyFilter({ key: 'genre', value: GenresEnum.horror });
+
+    expect(store.filterModel.appliedFilters.length).toBe(3);
+    expect(store.filterModel.appliedFilters).toEqual([
+      { key: 'genre', value: GenresEnum.detective },
+      { key: 'genre', value: GenresEnum.action },
+      { key: 'genre', value: GenresEnum.horror },
+    ]);
+    expect(fetchGetSpy).toBeCalledTimes(4);
+
+    store.removeFilter({ key: 'genre', value: GenresEnum.action });
+
+    expect(store.filterModel.appliedFilters.length).toBe(2);
+    expect(store.filterModel.appliedFilters).toEqual([
+      { key: 'genre', value: GenresEnum.detective },
+      { key: 'genre', value: GenresEnum.horror },
+    ]);
+    expect(fetchGetSpy).toBeCalledTimes(5);
   });
 });
