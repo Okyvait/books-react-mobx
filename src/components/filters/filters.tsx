@@ -44,3 +44,5 @@ export const filters: FilterItem[] = [
     ),
   },
 ];
+
+export const allFiltersKeys = filters.map((f) => f.key);

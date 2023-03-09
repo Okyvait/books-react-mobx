@@ -17,3 +17,5 @@ export const sorting: SortingItem[] = [
     ],
   },
 ];
+
+export const allSortingKeys = sorting.map((f) => f.key);

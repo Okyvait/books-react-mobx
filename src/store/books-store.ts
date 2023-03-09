@@ -37,9 +37,11 @@ export class BooksStore {
   }
 
   applyFilter(filter: Filter) {
-    if (this.filterModel.apply(filter)) {
+    const applied = this.filterModel.apply(filter);
+    if (applied) {
       this.loadBooks();
     }
+    return applied;
   }
 
   removeFilter(filter: Filter) {

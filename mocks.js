@@ -58,7 +58,6 @@ module.exports = function () {
   };
 
   const getBooks = (filters) => {
-    console.log(filters);
     if (!Object.keys(filters)?.length) {
       return books;
     }
