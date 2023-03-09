@@ -23,7 +23,9 @@ export const BookList = observer(() => {
 
       {/*todo: implement*/}
       <div className={styles.loadMoreContainer}>
-        <Button onClick={() => {}}>Load more...</Button>
+        <Button title={'to be implemented...'} disabled={true} onClick={() => {}}>
+          Load more...
+        </Button>
       </div>
     </div>
   );

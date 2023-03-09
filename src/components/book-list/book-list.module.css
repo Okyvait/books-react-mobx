@@ -32,6 +32,7 @@
   text-decoration: none;
 }
 
-.item:visited, .tem:active {
+.item:visited,
+.tem:active {
   color: initial;
 }

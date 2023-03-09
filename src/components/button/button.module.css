@@ -14,3 +14,8 @@
   transition: background-color 300ms;
   background-color: var(--color-background-grey);
 }
+
+.btn:disabled {
+  background-color: var(--color-background-grey);
+  cursor: default;
+}

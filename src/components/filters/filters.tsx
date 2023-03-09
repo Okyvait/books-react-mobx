@@ -2,12 +2,13 @@ import { Option, Select } from '../select/select';
 import { Label } from '../label/label';
 import { FilterKey } from '../../models/filters/shared';
 import { GenresEnum } from './filters-enum';
+import { SyntheticEvent } from 'react';
 
 interface FilterItem {
   key: FilterKey;
   options: Option[];
   label: string;
-  renderFn: (x: FilterItem, action: (v) => void) => JSX.Element;
+  renderFn: (x: FilterItem, action: (v: string, e?: SyntheticEvent) => void) => JSX.Element;
 }
 
 export const filters: FilterItem[] = [

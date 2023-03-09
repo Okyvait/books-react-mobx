@@ -1,15 +1,17 @@
 import * as styles from './button.module.css';
 
 interface ButtonProps {
-  onClick();
-  children?: JSX.Element | string;
+  title?: string;
+  disabled?: boolean;
   classNames?: string;
+  children?: JSX.Element | string;
+  onClick();
 }
 
-export const Button = ({ children, onClick, classNames = '' }: ButtonProps) => {
+export const Button = ({ children, onClick, classNames = '', disabled, title }: ButtonProps) => {
   const handleClick = () => onClick();
   return (
-    <button className={`${styles.btn} ${classNames}`} onClick={handleClick}>
+    <button disabled={disabled} className={`${styles.btn} ${classNames}`} title={title} onClick={handleClick}>
       {children}
     </button>
   );

@@ -1,4 +1,5 @@
 import * as styles from './select.module.css';
+import { SyntheticEvent } from 'react';
 
 export type Option = {
   value: string | number;
@@ -8,11 +9,13 @@ export type Option = {
 interface SelectProps {
   options: Option[];
   emptyOption?: boolean;
-  onSelect(v);
+  onSelect(v: string, e?: SyntheticEvent);
 }
 
 export const Select = ({ options, emptyOption = true, onSelect }: SelectProps) => {
-  const handleSelect = (v) => onSelect(v.target.value);
+  const handleSelect = (e) => {
+    onSelect(e.target.value, e);
+  };
 
   return (
     <select className={styles.select} onChange={handleSelect}>

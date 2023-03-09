@@ -8,9 +8,11 @@ import * as styles from './filters.module.css';
 
 export const FiltersRow = () => {
   const booksStore = useContext(booksStoreContext);
-  const applyFilter = (item, value) => {
+
+  const applyFilter = (item, value, event) => {
     if (!value) return;
     booksStore.applyFilter({ key: item.key, value });
+    event.target.value = null;
   };
 
   return (
@@ -21,7 +23,7 @@ export const FiltersRow = () => {
         </Label>
       ))}
       {filters.map((x) => (
-        <span key={x.key}>{x.renderFn(x, (v) => applyFilter(x, v))}</span>
+        <span key={x.key}>{x.renderFn(x, (v, e) => applyFilter(x, v, e))}</span>
       ))}
     </div>
   );

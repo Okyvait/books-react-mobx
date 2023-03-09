@@ -74,7 +74,7 @@ describe('books store', () => {
       { key: 'genre', value: GenresEnum.action },
       { key: 'genre', value: GenresEnum.horror },
     ]);
-    expect(fetchGetSpy).toBeCalledTimes(4);
+    expect(fetchGetSpy).toBeCalledTimes(3);
 
     store.removeFilter({ key: 'genre', value: GenresEnum.action });
 
@@ -83,6 +83,13 @@ describe('books store', () => {
       { key: 'genre', value: GenresEnum.detective },
       { key: 'genre', value: GenresEnum.horror },
     ]);
-    expect(fetchGetSpy).toBeCalledTimes(5);
+    expect(fetchGetSpy).toBeCalledTimes(4);
+  });
+
+  it('should not call api twice', async () => {
+    await store.applyFilter({ key: 'genre', value: GenresEnum.mystery });
+    await store.applyFilter({ key: 'genre', value: GenresEnum.mystery });
+
+    expect(fetchGetSpy).toBeCalledTimes(1);
   });
 });

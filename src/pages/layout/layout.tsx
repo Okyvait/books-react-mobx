@@ -11,7 +11,7 @@ export const Layout = () => {
       </div>
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          <div>This is some footer content</div>
+          <div>This is a footer content</div>
           <div>
             Some long footer link #1
             <br />

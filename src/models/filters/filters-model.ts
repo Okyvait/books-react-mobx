@@ -11,9 +11,11 @@ export class FiltersModel {
     });
   }
 
-  apply({ key, value }: Filter) {
+  apply({ key, value }: Filter): boolean {
     this.filters[key] = this.filters[key] || new Set();
+    const alreadyHasVal = this.filters[key].has(value);
     this.filters[key].add(value);
+    return !alreadyHasVal;
   }
 
   remove({ key, value }: Filter) {
