@@ -2,6 +2,7 @@ import clearAllMocks = jest.clearAllMocks;
 import { fetchClient } from '../../init';
 import { BooksStore } from '../books-store';
 import { GenresEnum } from '../../components/filters/filters-enum';
+import { SortingEnum } from '../../components/filters/sorting-enum';
 
 describe('books store', () => {
   const fetchGetSpy = jest.spyOn(fetchClient, 'get');
@@ -25,7 +26,7 @@ describe('books store', () => {
 
     expect(fetchGetSpy).toBeCalledTimes(1);
     expect(store.booksList).toEqual([id]);
-    expect(store.books[id]).toBeDefined();
+    expect(store.books.get(id)).toBeDefined();
     expect(store.loading).toBeFalsy();
   });
 
@@ -47,7 +48,7 @@ describe('books store', () => {
 
     expect(fetchGetSpy).toBeCalledTimes(1);
     expect(fetchGetSpy).toBeCalledWith(expect.stringContaining(id));
-    expect(store.books[id]).toBeDefined();
+    expect(store.books.get(id)).toBeDefined();
     expect(store.loading).toBeFalsy();
   });
 
@@ -90,6 +91,14 @@ describe('books store', () => {
     await store.applyFilter({ key: 'genre', value: GenresEnum.mystery });
     await store.applyFilter({ key: 'genre', value: GenresEnum.mystery });
 
+    expect(fetchGetSpy).toBeCalledTimes(1);
+  });
+
+  it('should apply sorting', async () => {
+    await store.sortBooks({ key: 'sortRating', value: SortingEnum.asc });
+
+    expect(store.filterModel.appliedSorting.length).toBe(1);
+    expect(store.filterModel.appliedSorting).toEqual([{ key: 'sortRating', value: SortingEnum.asc }]);
     expect(fetchGetSpy).toBeCalledTimes(1);
   });
 });

@@ -24,7 +24,7 @@ export const BookPage = observer(() => {
 
   if (booksStore.loading) return <div>...loading</div>;
 
-  const book = booksStore.books[bookId];
+  const book = booksStore.books.get(bookId);
   return (
     <div className={styles.cardContainer}>
       <div className={styles.backBtnContainer}>

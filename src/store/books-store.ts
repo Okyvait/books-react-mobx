@@ -2,14 +2,12 @@ import { computed, makeAutoObservable } from 'mobx';
 import { Book } from '../models/book-model';
 import { booksApiClient } from '../init';
 import { FiltersModel } from '../models/filters/filters-model';
-import { Filter } from '../models/filters/shared';
+import { Filter, Sorting } from '../models/filters/shared';
 
-export interface Books {
-  [id: string]: Book;
-}
+export type Books = Map<string, Book>;
 
 export class BooksStore {
-  books: Books = {};
+  books: Books = new Map<string, Book>();
   loading = true;
   filterModel: FiltersModel;
 
@@ -21,12 +19,15 @@ export class BooksStore {
   }
 
   get booksList(): string[] {
-    return Object.keys(this.books) || [];
+    return [...this.books.keys()] || [];
   }
 
   loadBooks() {
     this.loading = true;
-    const filters = { filters: this.filterModel.appliedFilters };
+    const filters = {
+      filters: this.filterModel.appliedFilters,
+      sorting: this.filterModel.appliedSorting,
+    };
     return booksApiClient.loadBooks(filters).then(this.setBooks);
   }
 
@@ -46,10 +47,15 @@ export class BooksStore {
     this.loadBooks();
   }
 
+  sortBooks(sorting: Partial<Sorting>) {
+    this.filterModel.sort(sorting);
+    this.loadBooks();
+  }
+
   private addBook = (info: Book) => {
     this.loading = false;
     if (!info?.id) return;
-    this.books[info.id] = info;
+    this.books.set(info.id, info);
   };
 
   private setBooks = (books: Books) => {

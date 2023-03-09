@@ -7,18 +7,19 @@ export type Option = {
 };
 
 interface SelectProps {
+  value?: string | number;
   options: Option[];
   emptyOption?: boolean;
-  onSelect(v: string, e?: SyntheticEvent);
+  onSelect(v: string | number, e?: SyntheticEvent);
 }
 
-export const Select = ({ options, emptyOption = true, onSelect }: SelectProps) => {
+export const Select = ({ options, emptyOption = true, onSelect, value }: SelectProps) => {
   const handleSelect = (e) => {
     onSelect(e.target.value, e);
   };
 
   return (
-    <select className={styles.select} onChange={handleSelect}>
+    <select className={styles.select} onChange={handleSelect} value={value}>
       {emptyOption && <option />}
       {options?.length ? (
         options.map(({ value, name }) => (

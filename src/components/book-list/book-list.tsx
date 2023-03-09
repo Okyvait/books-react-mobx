@@ -17,7 +17,7 @@ export const BookList = observer(() => {
     <div>
       <div className={styles.list}>
         {booksStore.booksList.length
-          ? booksStore.booksList.map((key) => <BookListItem key={key} book={booksStore.books[key]} />)
+          ? booksStore.booksList.map((key) => <BookListItem key={key} book={booksStore.books.get(key)} />)
           : 'Nothing was found... :( '}
       </div>
 

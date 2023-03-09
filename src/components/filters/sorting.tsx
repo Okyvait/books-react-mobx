@@ -1,5 +1,6 @@
 import { Option } from '../select/select';
 import { SortingKey } from '../../models/filters/shared';
+import { SortingEnum } from './sorting-enum';
 
 interface SortingItem {
   key: SortingKey;
@@ -8,11 +9,11 @@ interface SortingItem {
 }
 export const sorting: SortingItem[] = [
   {
-    key: 'rating',
+    key: 'sortRating',
     label: 'Sort by',
     options: [
-      { value: 'desc', name: '↓ rating' },
-      { value: 'asc', name: '↑ rating' },
+      { value: SortingEnum.desc, name: '↓ rating' },
+      { value: SortingEnum.asc, name: '↑ rating' },
     ],
   },
 ];

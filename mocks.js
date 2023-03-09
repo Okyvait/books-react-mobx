@@ -52,15 +52,35 @@ module.exports = function () {
     }
   };
 
+  const filterByGenre = (filters, book) => {
+    if (typeof filters.genre === 'string') return book.genres.includes(filters.genre);
+    return filters.genre?.every((f) => book.genres.includes(f));
+  };
+
   const getBooks = (filters) => {
+    console.log(filters);
     if (!Object.keys(filters)?.length) {
       return books;
     }
 
-    return books.filter((book) => {
-      if (typeof filters.genre === 'string') return book.genres.includes(filters.genre);
-      return filters.genre?.every((f) => book.genres.includes(f));
-    });
+    let filtered = books;
+
+    if (filters.genre) {
+      filtered = books.filter((book) => {
+        return filterByGenre(filters, book);
+      });
+    }
+
+    if (filters.sortRating) {
+      const sign = filters.sortRating === 'asc' ? 1 : -1;
+      return filtered.sort((a, b) => {
+        if (a.rating > b.rating) return sign;
+        else if (a.rating < b.rating) return -1 * sign;
+        return 0;
+      });
+    }
+
+    return filtered;
   };
 
   return {

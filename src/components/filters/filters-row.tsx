@@ -15,11 +15,15 @@ export const FiltersRow = () => {
     event.target.value = null;
   };
 
+  const applySorting = (item, value) => {
+    booksStore.sortBooks({ key: item.key, value: value });
+  };
+
   return (
     <div className={styles.filterRow}>
       {sorting.map((x) => (
         <Label key={x.key} text={x.label}>
-          <Select options={x.options} onSelect={() => {}} />
+          <Select options={x.options} onSelect={(v) => applySorting(x, v)} value={booksStore.filterModel.sorting[x.key]} />
         </Label>
       ))}
       {filters.map((x) => (

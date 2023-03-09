@@ -1,6 +1,7 @@
 import { FiltersModel } from '../filters-model';
 import { GenresEnum } from '../../../components/filters/filters-enum';
 import { Filter } from '../shared';
+import { SortingEnum } from '../../../components/filters/sorting-enum';
 
 describe('filter model', () => {
   const model = new FiltersModel();
@@ -31,5 +32,18 @@ describe('filter model', () => {
     filters = Array.from(model.filters.genre);
     expect(filters).toEqual(expect.not.arrayContaining([GenresEnum.action]));
     expect(model.appliedFilters).toEqual(expect.not.arrayContaining([applied]));
+  });
+
+  it('should apply and remove sorting', () => {
+    model.sort({ key: 'sortRating', value: SortingEnum.asc });
+
+    expect(model.sorting).toHaveProperty('sortRating');
+    expect(model.sorting.sortRating).toEqual(SortingEnum.asc);
+    expect(model.appliedSorting).toEqual([{ key: 'sortRating', value: SortingEnum.asc }]);
+
+    model.sort({ key: 'sortRating', value: '' });
+
+    expect(model.sorting).not.toHaveProperty('sortRating');
+    expect(model.appliedSorting).toEqual([]);
   });
 });

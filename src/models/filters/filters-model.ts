@@ -1,9 +1,9 @@
-import { Filter, FilterKey, SortingKey } from './shared';
+import { Filter, FilterKey, Sorting, SortingKey } from './shared';
 import { computed, makeAutoObservable } from 'mobx';
 
 export class FiltersModel {
   filters: Partial<Record<FilterKey, Set<string>>> = {};
-  sorting: Partial<Record<SortingKey, Set<string>>> = {};
+  sorting: Partial<Record<SortingKey, string>> = {};
 
   constructor() {
     makeAutoObservable(this, {
@@ -24,11 +24,23 @@ export class FiltersModel {
     }
   }
 
+  sort({ key, value }: Partial<Sorting>) {
+    if (!value) {
+      delete this.sorting[key];
+      return;
+    }
+    this.sorting[key] = value;
+  }
+
   get appliedFilters(): Filter[] {
     const applied = [];
     Object.entries(this.filters).forEach(([key, values]) => {
       values.forEach((value) => applied.push({ key, value }));
     });
     return applied;
+  }
+
+  get appliedSorting(): Sorting[] {
+    return Object.entries(this.sorting).map(([key, value]: [key: SortingKey, value: string]) => ({ key, value }));
   }
 }

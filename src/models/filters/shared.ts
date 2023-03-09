@@ -9,4 +9,4 @@ export interface Sorting {
 }
 
 export type FilterKey = 'genre';
-export type SortingKey = 'rating';
+export type SortingKey = 'sortRating';
