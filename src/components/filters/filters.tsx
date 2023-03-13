@@ -39,7 +39,7 @@ export const filters: FilterItem[] = [
     ],
     renderFn: (x, onSelect) => (
       <Label text={x.label}>
-        <Select options={x.options} onSelect={onSelect} />
+        <Select options={x.options} onSelect={onSelect} data-testid={`${x.key}FilterSelect`} />
       </Label>
     ),
   },

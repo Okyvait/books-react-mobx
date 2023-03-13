@@ -34,7 +34,12 @@ export const FiltersRow = observer(() => {
     <div className={styles.filterRow}>
       {sorting.map((x) => (
         <Label key={x.key} text={x.label}>
-          <Select options={x.options} onSelect={(v) => applySorting(x, v)} value={booksStore.filterModel.sorting[x.key]} />
+          <Select
+            options={x.options}
+            onSelect={(v) => applySorting(x, v)}
+            value={booksStore.filterModel.sorting[x.key]}
+            data-testid={'sortBySelect'}
+          />
         </Label>
       ))}
       {filters.map((x) => (

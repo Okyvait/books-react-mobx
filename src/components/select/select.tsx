@@ -11,15 +11,16 @@ interface SelectProps {
   options: Option[];
   emptyOption?: boolean;
   onSelect(v: string | number, e?: SyntheticEvent);
+  'data-testid'?: string;
 }
 
-export const Select = ({ options, emptyOption = true, onSelect, value }: SelectProps) => {
+export const Select = ({ options, emptyOption = true, onSelect, value, ...props }: SelectProps) => {
   const handleSelect = (e) => {
     onSelect(e.target.value, e);
   };
 
   return (
-    <select className={styles.select} onChange={handleSelect} value={value}>
+    <select className={styles.select} onChange={handleSelect} value={value} data-testid={props['data-testid']}>
       {emptyOption && <option />}
       {options?.length ? (
         options.map(({ value, name }) => (

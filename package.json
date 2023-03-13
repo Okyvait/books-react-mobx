@@ -8,7 +8,8 @@
     "lint": "eslint . --ext .ts,.tsx --fix",
     "prettier": "npx prettier --write ./src",
     "test": "jest",
-    "teste2e:open": "cypress open"
+    "e2e:open": "cypress open",
+    "e2e:run": "cypress run"
   },
   "repository": {
     "type": "git",

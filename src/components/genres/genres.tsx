@@ -6,11 +6,11 @@ interface GenresProps {
 
 export const Genres = ({ genres }: GenresProps) => {
   return (
-    <span>
+    <span data-testid={'genres'}>
       {genres?.map((g, i) => (
         <span className={styles.genre} key={g}>
           {g}
-          {i === genres.length - 1 ? '' : ','}{' '}
+          {i === genres.length - 1 ? '' : ', '}
         </span>
       ))}
     </span>
