@@ -1,13 +1,15 @@
 # React + Typescript + MobX
 
-This is a typical React app.
+This is a typical React app. 
+Contains unit tests and e2e tests.
 
 Build with: 
   - React
   - Typescript
   - MobX
   - Jest
-  - Parcel...
+  - Parcel,
+  - Cypress...
 
 ## Start app locally
 `npm start` 
