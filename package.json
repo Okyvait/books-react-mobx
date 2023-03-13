@@ -7,7 +7,8 @@
     "server": "node mock-server.js",
     "lint": "eslint . --ext .ts,.tsx --fix",
     "prettier": "npx prettier --write ./src",
-    "test": "jest"
+    "test": "jest",
+    "teste2e:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "cors": "^2.8.5",
+    "cypress": "^12.7.0",
     "eslint": "8.22.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-react": "^7.32.1",

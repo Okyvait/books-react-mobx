@@ -13,7 +13,7 @@ export const BookListItem = ({ book }: BookListItemProps) => {
   const { rating, title, genres, id } = book;
 
   return (
-    <Link className={styles.item} to={AppRoutes.book.getUrl(id)}>
+    <Link className={styles.item} to={AppRoutes.book.getUrl(id)} data-testid={'linkToCard'}>
       <div className={styles.wrap}>
         <Img />
         <div>
