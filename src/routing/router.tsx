@@ -8,7 +8,13 @@ export const Router = createBrowserRouter([
   {
     path: AppRoutes.main.path,
     element: <Layout />,
-    errorElement: <div>error 404</div>,
+    hasErrorBoundary: true,
+    errorElement: (
+      <div>
+        <h1>Something went wrong</h1>
+        <p>Please, try again later, or contact us</p>
+      </div>
+    ),
     children: [
       {
         path: '',
