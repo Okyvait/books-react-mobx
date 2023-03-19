@@ -1,7 +1,8 @@
 # React + Typescript + MobX
 
-This is a typical React app. 
-Contains unit tests and e2e tests.
+This is a sample React app. 
+
+It contains unit tests and e2e tests.
 
 Build with: 
   - React
